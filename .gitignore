@@ -98,3 +98,5 @@ images/
 react-material-dashboard-master/
 
 mongo_volume/
+
+.*.env
