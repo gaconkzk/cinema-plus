@@ -1,0 +1,18 @@
+version: '3'
+services:
+    database:
+        image: 'mongo'
+        container_name: 'mongod'
+        volumes:
+          - ./mongo_volume:/data/db
+    server:
+        build:
+            context: '../'
+            dockerfile: 'deploy/Dockerfile'
+        container_name: 'cinser'
+        ports:
+          - '8080:8080'
+        environment: 
+          - MONGODB_URI="mongodb://database:27017/cinser"
+        depends_on:
+          - database
