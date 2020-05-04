@@ -1,7 +1,7 @@
 import { GET_MOVIES, SELECT_MOVIE,GET_SUGGESTIONS } from '../types';
 
 const initialState = {
-  movies: [],
+  movies: null,
   randomMovie: null,
   latestMovies: [],
   nowShowing: [],

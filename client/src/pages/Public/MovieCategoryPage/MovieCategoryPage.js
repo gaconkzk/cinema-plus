@@ -22,7 +22,7 @@ function MovieCategoryPage(props) {
   const { movies, getMovies } = props;
   const category = props.match.params.category;
   useEffect(() => {
-    if (!movies.length) {
+    if (!movies) {
       getMovies();
     }
   }, [movies, getMovies]);

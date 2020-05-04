@@ -22,7 +22,7 @@ class HomePage extends Component {
       getMovieSuggestion,
       user
     } = this.props;
-    if (!movies.length) getMovies();
+    if (!movies) getMovies();
     if (!showtimes.length) getShowtimes();
     if (user) {
       if (!suggested.length) getMovieSuggestion(user.username);

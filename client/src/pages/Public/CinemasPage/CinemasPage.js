@@ -18,7 +18,7 @@ function CinemasPage(props) {
   const classes = useStyles(props);
   const { cinemas, getCinemas } = props;
   useEffect(() => {
-    if (!cinemas.length) getCinemas();
+    if (!cinemas) getCinemas();
   }, [cinemas, getCinemas]);
 
   return (

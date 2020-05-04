@@ -23,7 +23,7 @@ export default function BookingForm(props) {
     showtime => showtime.cinemaId === selectedCinema
   );
 
-  if (!cinemas.length)
+  if (!cinemas)
     return (
       <Box
         display="flex"

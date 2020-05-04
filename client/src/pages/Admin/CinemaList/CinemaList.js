@@ -22,7 +22,7 @@ class CinemaList extends Component {
 
   componentDidMount() {
     const { cinemas, getCinemas } = this.props;
-    if (!cinemas.length) getCinemas();
+    if (!cinemas) getCinemas();
   }
 
   openEditDialog = cinema => {

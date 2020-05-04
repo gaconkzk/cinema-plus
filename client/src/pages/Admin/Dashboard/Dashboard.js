@@ -67,10 +67,10 @@ class Dashboard extends Component {
             <TotalUsers users={users.length} />
           </Grid>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <TotalCinemas cinemas={cinemas.length} />
+            <TotalCinemas cinemas={cinemas ? cinemas.length : 0} />
           </Grid>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
-            <TotalMovies movies={movies.length} />
+            <TotalMovies movies={movies ? movies.length : 0} />
           </Grid>
           <Grid item lg={3} sm={6} xl={3} xs={12}>
             <TotalReservations reservations={reservations.length} />

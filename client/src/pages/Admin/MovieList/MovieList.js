@@ -14,14 +14,14 @@ class MovieList extends Component {
   state = { search: '' };
   componentDidMount() {
     const { movies, getMovies } = this.props;
-    if (!movies.length) getMovies();
+    if (!movies) getMovies();
   }
 
   renderMovies() {
     const { classes } = this.props;
     const movies = match(this.state.search, this.props.movies, 'title');
 
-    if (!movies.length) {
+    if (!movies) {
       return (
         <div className={classes.progressWrapper}>
           <CircularProgress />

@@ -27,8 +27,8 @@ class ReservationList extends Component {
     } = this.props;
 
     if (!reservations.length) getReservations();
-    if (!movies.length) getMovies();
-    if (!cinemas.length) getCinemas();
+    if (!movies) getMovies();
+    if (!cinemas) getCinemas();
   }
 
   onChangeMode = () =>
