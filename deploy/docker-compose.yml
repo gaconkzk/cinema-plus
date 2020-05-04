@@ -7,13 +7,17 @@ services:
           - '8200:80'
         volumes: 
           - './nginx/conf:/etc/nginx:ro'
+        depends_on:
+          - server
     database:
         image: 'mongo'
         container_name: 'mongod'
+        ports:
+          - '27017:27017'
         volumes:
           - ./mongo_volume:/data/db
     server:
-        hostname: cinser
+        hostname: 'cinser'
         build:
             context: '../'
             dockerfile: 'deploy/Dockerfile'
@@ -23,5 +27,4 @@ services:
         ports:
           - '${SERVER_PORT}:8080'
         depends_on:
-          - nginx
           - database
